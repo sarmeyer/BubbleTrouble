@@ -28,6 +28,12 @@ public class UIManager : MonoBehaviour {
 		}
 	}
 
+	void resume() {
+		Debug.Log ("hello there");
+		Time.timeScale = 1;
+		hidePaused ();
+	}
+
 	//shows objects with ShowOnPause
 	public void showPaused() {
 		foreach (GameObject g in pauseObjects) {
