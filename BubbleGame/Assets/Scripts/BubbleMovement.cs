@@ -5,7 +5,7 @@ public class BubbleMovement : MonoBehaviour {
 	public Vector3 target;
 
 	public float speed=13f;
-
+	private bool mouseEntered;
 	private Rigidbody2D rb2d;
 
 	Vector3 screenPos;
@@ -21,6 +21,18 @@ public class BubbleMovement : MonoBehaviour {
 		rb2d.MovePosition((Vector3)rb2d.position + (transform.forward * speed * Time.deltaTime * direction));
 	}
 
+	void Update (){
+		if (mouseEntered && Input.GetMouseButtonDown (0)) {
+			Destroy (gameObject);
+		}
+	}
+	void OnMouseEnter(){
+		mouseEntered = true;
+	}
+
+	void OnMouseExit(){
+		mouseEntered = false;
+	}
 	void OnTriggerEnter2D (Collider2D other){
 		if (other.gameObject.CompareTag ("Wall")){
 			direction *= -1;
