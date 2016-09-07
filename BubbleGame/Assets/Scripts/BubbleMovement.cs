@@ -42,6 +42,5 @@ public class BubbleMovement : MonoBehaviour {
 			direction *= -1;
 		}
 	}
-		
 }
 
