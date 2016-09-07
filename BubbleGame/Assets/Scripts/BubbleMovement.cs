@@ -20,12 +20,13 @@ public class BubbleMovement : MonoBehaviour {
 	void FixedUpdate (){
 		rb2d.MovePosition((Vector3)rb2d.position + (transform.forward * speed * Time.deltaTime * direction));
 	}
-
+		
 	void Update (){
 		if (mouseEntered && Input.GetMouseButtonDown (0)) {
 			Destroy (gameObject);
 		}
 	}
+
 	void OnMouseEnter(){
 		mouseEntered = true;
 	}
@@ -41,5 +42,6 @@ public class BubbleMovement : MonoBehaviour {
 			direction *= -1;
 		}
 	}
+		
 }
 
