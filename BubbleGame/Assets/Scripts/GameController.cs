@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
 	public GUIText scoreText;
-	private int score;
+	public int score;
 
 	// Use this for initialization
 	void Start () {
@@ -20,5 +20,6 @@ public class GameController : MonoBehaviour {
 
 	void UpdateScore () {
 		scoreText.text = "Score: " + score;
+		PlayerPrefs.SetInt ("score", score);
 	}
 }
