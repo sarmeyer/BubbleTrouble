@@ -12,7 +12,7 @@ public class GameTimer : MonoBehaviour {
 	}
 	void Update () {
 		timeRemaining -= Time.deltaTime;
-		TimerText.text = timeRemaining.ToString ("f0");
+		TimerText.text = timeRemaining.ToString (":00");
 		if (timeRemaining <= 0) {
 			SceneManager.LoadScene("TimeOut");
 			timeRemaining = 0;
