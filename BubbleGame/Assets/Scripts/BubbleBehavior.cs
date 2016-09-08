@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class BubbleBehavior : MonoBehaviour {
+	public GameObject explosion;
+
 	private bool mouseEntered;
 
 	private GameController gameController;
@@ -26,6 +28,7 @@ public class BubbleBehavior : MonoBehaviour {
 	void Update() {
 		if (mouseEntered && Input.GetMouseButtonDown (0)) {
 			this.gameObject.SetActive (false);
+			Instantiate(explosion, transform.position, transform.rotation);
 			gameController.AddScore ();
 		}
 	}
