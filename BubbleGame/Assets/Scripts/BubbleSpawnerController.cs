@@ -19,7 +19,6 @@ public class BubbleSpawnerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//call SpawnBubble based on spawnRate
 		InvokeRepeating("SpawnBubble", 1, spawnRate);  
 		rb2d = GetComponent<Rigidbody2D> ();
 		target = Random.insideUnitSphere * 5;
@@ -36,10 +35,17 @@ public class BubbleSpawnerController : MonoBehaviour {
 		GameObject bubbleClone;  
 
 		//spawns enemyClone at this location and rotation   
-		bubbleClone = Instantiate(bubble, this.transform.position, this.transform.rotation) as GameObject;        
+		bubbleClone = Instantiate(bubble, this.transform.position, this.transform.rotation) as GameObject;   
+		Vector3 position = new Vector3(Random.Range(-0, 0), Random.Range(-10, 10), 0);
+		Instantiate(bubble, position, Quaternion.identity);
 
 		//randomly moves spawned bubble
 		rb2d.MovePosition((Vector3)rb2d.position + (transform.forward * speed * Time.deltaTime * direction));
-
+	}
+	void OnTriggerEnter2D (Collider2D other){
+		if (other.gameObject.CompareTag ("Wall") || other.gameObject.CompareTag("Player")){
+			direction *= -1;
+		}
 	}
 }
+
