@@ -24,7 +24,7 @@ public class BubbleBehavior : MonoBehaviour {
 		mouseEntered = false;
 	}
 	void Update() {
-		if (mouseEntered && Input.GetMouseButtonDown (0)) {
+		if (mouseEntered && Input.GetMouseButtonDown (0) && Time.timeScale == 1) {
 			this.gameObject.SetActive (false);
 			gameController.AddScore ();
 		}
