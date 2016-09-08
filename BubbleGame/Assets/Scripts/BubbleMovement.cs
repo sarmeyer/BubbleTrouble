@@ -21,10 +21,7 @@ public class BubbleMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other){
-		if (other.gameObject.CompareTag ("Wall")){
-			direction *= -1;
-		}
-		if (other.gameObject.CompareTag ("Player")){
+		if (other.gameObject.CompareTag ("Wall") || other.gameObject.CompareTag("Player")){
 			direction *= -1;
 		}
 	}
