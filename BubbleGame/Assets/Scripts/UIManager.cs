@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour {
 	GameObject[] pauseObjects;
 	GameObject[] playObjects;
-	public bool paused = false;
+//	public bool paused = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,13 +21,13 @@ public class UIManager : MonoBehaviour {
 
 	public void pause() {
 		Time.timeScale = 0;
-		paused = !paused;
+//		paused = !paused;
 		showPaused ();
 	}
 
 	public void resume() {
 		Time.timeScale = 1;
-		paused = !paused;
+//		paused = !paused;
 		hidePaused ();
 	}
 
