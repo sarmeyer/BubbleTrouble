@@ -18,5 +18,4 @@ public class GameTimer : MonoBehaviour {
 			timeRemaining = 0;
 		}
 	}
-
 }
