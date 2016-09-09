@@ -36,7 +36,7 @@ public class BubbleSpawnerController : MonoBehaviour {
 
 		//spawns enemyClone at this location and rotation   
 		bubbleClone = Instantiate(bubble, this.transform.position, this.transform.rotation) as GameObject;   
-		Vector3 position = new Vector3(Random.Range(-0, 0), Random.Range(-10, 10), 0);
+		Vector3 position = new Vector3(Random.Range(-3, 3), Random.Range(-5, 5), 0);
 		Instantiate(bubble, position, Quaternion.identity);
 
 		//randomly moves spawned bubble
