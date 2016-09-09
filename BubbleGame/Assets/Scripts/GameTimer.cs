@@ -8,11 +8,13 @@ public class GameTimer : MonoBehaviour {
 	public Text TimerText;
 
 	GameObject[] timeoutObjects;
+	GameObject[] timeoutObjects2;
 	GameObject[] hideOnTimeout;
 
 	void Start () {
 		TimerText = GetComponent<Text> ();
 		timeoutObjects = GameObject.FindGameObjectsWithTag ("ShowOnTimeout");
+		timeoutObjects2 = GameObject.FindGameObjectsWithTag ("ShowOnPauseAndTimeout");
 		hideOnTimeout = GameObject.FindGameObjectsWithTag ("HideOnPause");
 		hideTimeout ();
 	}
@@ -38,6 +40,9 @@ public class GameTimer : MonoBehaviour {
 	//shows objects with ShowOnTimeout tag
 	public void showTimeout () {
 		foreach (GameObject g in timeoutObjects) {
+			g.SetActive (true);
+		}
+		foreach (GameObject g in timeoutObjects2) {
 			g.SetActive (true);
 		}
 		foreach (GameObject g in hideOnTimeout) {
