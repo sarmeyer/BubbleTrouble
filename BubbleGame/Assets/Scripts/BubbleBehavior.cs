@@ -14,9 +14,6 @@ public class BubbleBehavior : MonoBehaviour {
 		if (gameControllerObject != null) {
 			gameController = gameControllerObject.GetComponent <GameController> ();
 		}
-		if (gameController == null) {
-			Debug.Log ("Cannot find 'GameController' script");
-		}
 	}
 	void OnMouseEnter(){
 		mouseEntered = true;
