@@ -20,6 +20,8 @@ Temp
 *.pidb
 *.booproj
 *.svd
+Builds
+BubbleGame/Builds
 
 
 # Unity3D generated meta files
